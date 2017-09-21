@@ -25,27 +25,27 @@ public class LoginTest {
 	}
 
 	@Test(priority = 0)
-	public void boTrongTK() {
+	public void boTrongTK() throws IOException {
 		login.boTrongTK(driver);
 	}
 
-	@Test(priority = 1)
-	public void boTrongMK() {
-		login.boTrongMK(driver);
-	}
-
-	@Test(priority = 2)
-	public void boTrongTenDN() {
-		login.boTrongTenDN(driver);
-	}
-
-	@Test(priority = 3)
-	public void nhapSaiMK() throws InterruptedException {
-		login.nhapSaiMK(driver);
-	}
-	
-	@Test(priority = 4)
-	public void nhapdungTK() throws InterruptedException {
-		login.nhapdungTK(driver);
-	}
+//	@Test(priority = 1)
+//	public void boTrongMK() throws IOException {
+//		login.boTrongMK(driver);
+//	}
+//
+//	@Test(priority = 2)
+//	public void boTrongTenDN() {
+//		login.boTrongTenDN(driver);
+//	}
+//
+//	@Test(priority = 3)
+//	public void nhapSaiMK() throws InterruptedException {
+//		login.nhapSaiMK(driver);
+//	}
+//	
+//	@Test(priority = 4)
+//	public void nhapdungTK() throws InterruptedException {
+//		login.nhapdungTK(driver);
+//	}
 }

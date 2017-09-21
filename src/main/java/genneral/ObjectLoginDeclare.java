@@ -19,6 +19,9 @@ public class ObjectLoginDeclare {
 		return By.xpath(".//*[@class='alert alert-danger']/span[2]");
 	}
 	
+//	public static By messageBoTrongTK() {
+//		return By.xpath("");
+//	}
 	public static By messageBoTrongMK() {
 		return By.xpath(".//*[@class='alert alert-danger']/span[3]");
 	}

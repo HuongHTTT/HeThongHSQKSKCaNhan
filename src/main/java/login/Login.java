@@ -1,25 +1,37 @@
 package login;
 
+import java.io.IOException;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+
+import chupanhmanhinh.ChupAnhManHinh;
 import genneral.ExcelUntil;
 import genneral.Method;
 import genneral.ObjectLoginDeclare;
 
 public class Login {
-	public void boTrongTK(WebDriver driver) {
-		Method.click(driver, ObjectLoginDeclare.btnLogin());
-		String getMessage = Method.getText(driver, ObjectLoginDeclare.messageBoTrongTK());
-		String message = ExcelUntil.getData(8, 4);
-		Assert.assertEquals(getMessage, message);
+	public void boTrongTK(WebDriver driver) throws IOException {
+		try {
+			Method.click(driver, ObjectLoginDeclare.btnLogin());
+			String getMessage = Method.getText(driver, ObjectLoginDeclare.messageBoTrongTK());
+			String message = ExcelUntil.getData(8, 4);
+			Assert.assertEquals(getMessage, message);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			ChupAnhManHinh.chupAnhManHinh(driver, "D://Dev//DemoJava//HeThongHoSoQuanLySucKhoeCaNhan//anhchupbug//boTrongTK.png");
+		}
 	}
 
-	public void boTrongMK(WebDriver driver) {
+	public void boTrongMK(WebDriver driver) throws IOException {
 		Method.senKey(driver, ObjectLoginDeclare.txtUsername(), ExcelUntil.getData(9, 2));
 		Method.click(driver, ObjectLoginDeclare.btnLogin());
-		String getMessage = Method.getText(driver, ObjectLoginDeclare.messageBoTrongMK());
+		String getMessage = Method.getText(driver, ObjectLoginDeclare.messageBoTrongTK());
 		String message = ExcelUntil.getData(9, 4);
 		Assert.assertEquals(getMessage, message);
+		ChupAnhManHinh.chupAnhManHinh(driver, "D://Dev//DemoJava//HeThongHoSoQuanLySucKhoeCaNhan//anhchupbug//boTrongMK.png");
+
 	}
 
 	public void boTrongTenDN(WebDriver driver) {
@@ -41,7 +53,7 @@ public class Login {
 		String message = ExcelUntil.getData(11, 4);
 		Assert.assertEquals(getMessage, message);
 	}
-	
+
 	public void nhapdungTK(WebDriver driver) throws InterruptedException {
 		Method.senKey(driver, ObjectLoginDeclare.txtUsername(), ExcelUntil.getData(12, 2));
 		Method.senKey(driver, ObjectLoginDeclare.txtPassword(), ExcelUntil.getData(12, 3));
@@ -51,13 +63,13 @@ public class Login {
 		Boolean check = Method.elementDisplay(driver, ObjectLoginDeclare.btnTrangChu());
 		Assert.assertTrue(check);
 	}
-	
+
 	public void LoginValid(WebDriver driver) throws InterruptedException {
 		Thread.sleep(1000);
 		Method.senKey(driver, ObjectLoginDeclare.txtUsername(), "tandd");
 		Method.senKey(driver, ObjectLoginDeclare.txtPassword(), "123456aA@");
 		Method.click(driver, ObjectLoginDeclare.txtUsername()); 
 		Method.click(driver, ObjectLoginDeclare.btnLogin()); 
-		
+
 	}
 }

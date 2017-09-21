@@ -13,7 +13,7 @@ public class ExcelUntil {
 	private static XSSFWorkbook WBook;
 	private static XSSFSheet FSheet;
 	private static XSSFRow FRow;
-	private static XSSFCell FCell; 
+	private static XSSFCell FCell;
 	public static void readExcel(String Path,  String Sheet) throws IOException {
 		try {
 			FileInputStream inputFile = new FileInputStream(Path);

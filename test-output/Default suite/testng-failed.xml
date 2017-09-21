@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="quanlyhososuckhoe.LichSuKCBTest">
+      <class name="login.LoginTest">
         <methods>
           <include name="beforeClass"/>
-          <include name="themVoiDieuKienHopLe"/>
+          <include name="boTrongTK"/>
         </methods>
-      </class> <!-- quanlyhososuckhoe.LichSuKCBTest -->
+      </class> <!-- login.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
